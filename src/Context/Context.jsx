@@ -22,7 +22,7 @@ const Context = () => {
 
     const fetchall = async () => {
         try {
-            const res = await axios.get(`http://localhost:3000/api/AllSnips?id=${id}`);
+            const res = await axios.get(`https://snip-z-vaibhav0dev-five.vercel.app/api/AllSnips?id=${id}`);
             if (res.data && res.data.data) {
                 
                 

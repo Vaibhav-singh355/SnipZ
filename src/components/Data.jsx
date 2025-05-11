@@ -20,7 +20,7 @@ const Data = ({snips=[]}) => {
         }, []);
     
     const del=async(id)=>{
-        axios.delete(`  http://localhost:3000/api/Delete?id=${id}&uid=${Id}`).then((res)=>{
+        axios.delete(`  https://snip-z-vaibhav0dev-five.vercel.app/api/Delete?id=${id}&uid=${Id}`).then((res)=>{
            toast.error(res.data.message) // Reload the page to reflect the deletion
            
         })

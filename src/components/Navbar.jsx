@@ -51,7 +51,7 @@ const Navbar = () => {
             return;
         }
         try {
-            const res = await axios.post("http://localhost:3000/api/AddSnip", { ...snip, id: id });
+            const res = await axios.post("https://snip-z-vaibhav0dev-five.vercel.app/api/AddSnip", { ...snip, id: id });
             setSnip({
                 title: "",
                 description: "",

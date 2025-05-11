@@ -63,7 +63,7 @@ const First = () => {
 const send1 = async (e) => {
     e.preventDefault()
     
-    await axios.post("http://localhost:3000/api/Auth",user1).then((res)=>{
+    await axios.post("https://snip-z-vaibhav0dev-five.vercel.app/api/Auth",user1).then((res)=>{
         console.log(res.data)
         console.log(res.data.data._id)
         sessionStorage.setItem("id",res.data.data._id)
@@ -114,7 +114,7 @@ const send1 = async (e) => {
       return;
     }
     try {
-      await axios.post("http://localhost:3000/api/AddUser", user).then((res) => {
+      await axios.post("https://snip-z-vaibhav0dev-five.vercel.app/api/AddUser", user).then((res) => {
         toast(res.data.message);
         setOpenModal(false);
       setOpenModal1(true)
