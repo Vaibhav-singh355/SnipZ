@@ -25,6 +25,7 @@ const Navbar = () => {
         body: ""
     });
     const [id, setId] = useState("");
+    const [Submit, setSubmit] = useState("Submit");
 
     useEffect(() => {
         const storedId = sessionStorage.getItem("id");
@@ -51,7 +52,11 @@ const Navbar = () => {
             return;
         }
         try {
-            const res = await axios.post("https://snip-z-vaibhav0dev-five.vercel.app/api/AddSnip", { ...snip, id: id });
+            const res = await axios.post(" http://localhost:3000/api/AddSnip", { ...snip, id: id });
+            setSubmit("Submitting...");
+            setTimeout(() => {
+                setSubmit("Submit");
+            }, 2000);
             setSnip({
                 title: "",
                 description: "",
@@ -237,7 +242,7 @@ const Navbar = () => {
                                 className={`${isDarkMode ? 'bg-purple-700 hover:bg-purple-600' : 'bg-[#655ade] hover:bg-purple-700'} text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full transform transition duration-500 hover:scale-105`}
                                 type="submit"
                             >
-                                Submit
+                                {Submit}
                             </button>
                         </div>
                     </form>
